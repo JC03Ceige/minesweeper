@@ -1,21 +1,37 @@
+/* We import two things into the CSS for this app.*/
+/* We use bootstrap styling for the bootstrap components 
+we use in the App. */
+@import "bootstrap/dist/css/bootstrap.min.css";
+/* We import the font we use from Google fonts. */
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+/* Here we style all the generic styling for the app and 
+specify the font we imported. */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Righteous", "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+}
+
+/* Set the text alignment for the entire app. */
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+/* We style the h1 element for the app, setting specific 
+min-height and background color to create a clear header. */
+h1 {
+  font-size: 2em !important;
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 13vh;
+  margin-bottom: 0.7em;
+  letter-spacing: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +40,60 @@
   color: white;
 }
 
-.App-link {
+/* Here we style the h2 element, giving it a box-shadow and a 
+text-shadow to let it stand out. */
+h2 {
+  font-size: 1.2em !important;
+  border-radius: 10em;
+  background-color: rgba(158, 235, 248, 0.7);
+  box-shadow: inset 1px 2px 3px 2px whitesmoke, inset -1px -1px 2px 2px grey;
+  min-height: 6vh;
+  margin: 1em 0;
+  letter-spacing: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 1px 1px 2px darkslategrey;
+}
+
+/* The cell component is styled inline but this is set in CSS as a back-up.*/
+.cellStyle {
+  border-radius: 5px !important;
+  max-width: 40px;
+  max-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 800;
+  border: solid #282c34;
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* We give the buttons generic styling with this block which we will
+make more specific with relevant class names. */
+button {
+  border-radius: 10em !important;
+  border: solid 0.1em lightgray;
+  margin: 0.2rem 1.5rem;
+  width: 7em;
+  padding: 0.75em;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+  background-color: rgba(4, 89, 104, 0.7);
+  box-shadow: -2px -3px 2px 0.5px rgb(97, 97, 97),
+    1px 1px 2px 0.5px rgb(97, 97, 97), inset 1px 2px 7px #eee;
+  cursor: pointer;
+}
+
+.helpBtn {
+  background-color: rgba(4, 104, 91, 0.77);
+}
+
+.resetBtn {
+  background-color: rgba(104, 4, 74, 0.7);
 }

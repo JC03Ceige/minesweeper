@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+/* To keep this component as uncluttered as possible we
+import components minimally */
+import "./App.css";
+import Board from "./components/Board";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      /* This inline styling is to set the background for the app. */
+      style={{
+        /* The image is saved in the public folder to enable direct access. */
+        backgroundImage: `url(/retro_space.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
+      {/* We only have the title and the Board UI component. */}
+      <h1>Minesweeper</h1>
+      <Board />
     </div>
   );
-}
+};
 
+/* The component is exported to be rendered in index.js */
 export default App;
